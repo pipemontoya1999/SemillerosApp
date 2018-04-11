@@ -14,6 +14,8 @@
 class ConexionDB {
     
     var $conn;
+    
+    
    
    function conectadb(){
         
@@ -31,3 +33,7 @@ class ConexionDB {
         
     }
 }
+
+$lol = new ConexionDB();
+
+$lol->conectadb();
