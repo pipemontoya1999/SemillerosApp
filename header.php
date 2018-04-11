@@ -8,7 +8,7 @@
 	<header>
 		<div class="wrapp">
 			<div class="logo">
-				<a href="#"><img src="img/logotipo.jpg" alt="Pipemontoya"></a>
+				<a href="#"><img src="img/unisabana.png" alt="Pipemontoya"></a>
 			</div>
 			<nav>
 				<ul>

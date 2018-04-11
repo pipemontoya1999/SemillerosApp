@@ -4,7 +4,7 @@
 	<section class="main">
 		<div class="wrapp">
 			<div class="mensaje">
-				<h1>Bienvenido!</h1>
+				<h1>Acerca de</h1>
 			</div>
 
 			<div class="articulo">
