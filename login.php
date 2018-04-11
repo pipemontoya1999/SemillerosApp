@@ -24,22 +24,27 @@
                 $user = (string)$_POST['user'];
                 $password = (string)$_POST['password'];
                 $consulta = "SELECT usuario, contrasena FROM persona";
-
+                $estado = 0;
                 include "ConexionDB.php";
                 $ejecutar = sqlsrv_query($conn,$consulta);
                 
                 while($fila = sqlsrv_fetch_array($ejecutar)){
+                   
+                    
                     $usuario = (string)$fila['usuario'];
                     $pass = (string)$fila['contrasena'];
-
+                        
                         if($pass == $password && $usuario == $user){
-                        echo '<a class="form__good">Sesion Iniciada</a>';
+                        
+                        $estado=1;
+                        break;
                     }
-                    else{echo '<a class="form__bad">Sesion Iniciada</a>';}
-                       
+                    
                 }
 
-
+                    if($estado == 1){echo '<a class="form__good">Sesion Iniciada</a>';}
+                    else{echo '<a class="form__bad">contraseña o usuario incorrectos</a>';}
+                       
                         
        
             }

@@ -14,7 +14,7 @@
                                             de la Sabana.</p>
 					<br/>
                                         
-                                        <p>Para comenzar, inicia una sesión con tu cuenta institucional </p> <p> <a href="blog.php">Inicia sesion</a> </p>
+                                        <p>Para comenzar, inicia una sesión con tu cuenta institucional </p> <p> <a href="login.php">Inicia sesion</a> </p>
 					
 				</article>
 			</div>
