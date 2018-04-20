@@ -8,48 +8,52 @@
     <title>Login</title>
 </head>
 <body>
+    <?php
+    $Estado = TRUE;
+    if(isset($_POST['entrar'])){
+        
+    include 'config.php';
+    try{
+        $conn = new PDO(serverInfo, UID, PWD);
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $sql = "SELECT* FROM persona WHERE usuario= :user AND contrasena= :password";
+        $resultado=$conn->prepare($sql);
+        $user= htmlentities(addslashes($_POST['user']));
+        $pass= htmlentities(addslashes($_POST['password']));
+        $resultado->bindValue(":user", $user);
+        $resultado->bindValue(":password", $pass);
+        $resultado->execute();
+        $numero_registro=$resultado->rowCount();
+    
+      if ($numero_registro != 0){
+       
+        session_start();
+        $_SESSION['USER']= $_POST['user'];
+        $Estado=TRUE;
+        echo $_SESSION['USER'];
+        }else{$Estado=false;}
+      }
+    catch (Exception $e){
+    die ("error".$e->getMessage());
+   }
+ }
+?>
     <div class="login__container">
        <div class="login__top">
           <img  class="login__img" src="img/unisabana.png" alt="">
           <h2 class="login__title">Semi <span>Sabana</span></h2>
        </div>
         
-        <form method="POST" action="login.php" class="login__form">
-            <input type="text" name="user" placeholder="&#128100; usuario" required autofocus>
+        <form method="POST" action="<?php echo $_SERVER['PHP_SELF'];?> " class="login__form">
+            <input type="email" name="user" placeholder="&#128100; usuario" required autofocus>
             <input type="password" name="password" placeholder="&#x1F512; contraseña" required>
             <input class="btn__submit" type="submit" name="entrar" value="ENTRAR">
-            <a class="form__recover" href="">Olvidaste la contraseña?</a>
+            <a class="form__recover" href="">Olvidaste la contraseña?</a><br>
             <?php
-            if(isset($_POST['entrar'])){
-                $user = (string)$_POST['user'];
-                $password = (string)$_POST['password'];
-                $consulta = "SELECT usuario, contrasena FROM persona";
-                $estado = 0;
-                include "ConexionDB.php";
-                $ejecutar = sqlsrv_query($conn,$consulta);
-                
-                while($fila = sqlsrv_fetch_array($ejecutar)){
-                   
-                    
-                    $usuario = (string)$fila['usuario'];
-                    $pass = (string)$fila['contrasena'];
-                        
-                        if($pass == $password && $usuario == $user){
-                        
-                        $estado=1;
-                        break;
-                    }
-                    
-                }
-
-                    if($estado == 1){echo '<a class="form__good">Sesion Iniciada</a>';}
-                    else{echo '<a class="form__bad">contraseña o usuario incorrectos</a>';}
-                       
-                        
-       
-            }
-             
-                    ?>
+            if (!$Estado){
+                echo '<a class="form__bad">Usuario o contraseña incorrectos</a>';
+              }
+            ?>
             
         </form>
     </div>

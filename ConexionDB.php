@@ -1,17 +1,21 @@
-
 <?php
-        $serverName = "DESKTOP-8PSRS9J\SQLEXPRESS"; //serverName\instanceName
-        $connectionInfo = array( "Database"=>"prueba", "UID"=>"conexionsql", "PWD"=>"1234");
-        $conn = sqlsrv_connect( $serverName, $connectionInfo);
+       include 'config.php';
+        //$connectionInfo = array( "Database"=>"prueba", "UID"=>"conexionsql", "PWD"=>"1234");
+     
+  try
+{
+    $conn = new PDO(serverInfo, UID, PWD);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo 'Connexion exitosa ';
+}
+catch (PDOException $e)
+{
+    die('Connection failed: ' . $e->getMessage());
+}
 
-    if( $conn ) {
-      echo "Conexión establecida.<br />";
-      
-               
+ finally {
+    $conn = null;
+ }
 
-     }else{
-      echo "No se pudo establecer la Conexión.<br />";
-      die( print_r( sqlsrv_errors(), true));
-    }
+
 ?>
-

@@ -51,14 +51,14 @@ body {
 
 }
 
-input[type=text], [type=password] {
+input[type=text],[type=email] , [type=password] {
 	height: .5rem;
 	margin: .5rem 0;
 	padding: 1rem;
 	transition: all .7s;
 }
 
-input[type=text]:focus, [type=password]:focus {
+input[type=text]:focus, [type=password]:focus , [type=email]:focus  {
 	border-color: #C8C8C8;
 	background-color: #EFEFEF; 
 }

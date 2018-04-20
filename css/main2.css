@@ -52,7 +52,7 @@ body {
 	text-align: center;
 }
 
-input[type=text], [type=password] {
+input[type=text], [type=password], [type=email] {
 	margin: .4rem 0;
 	padding: .5rem;
 	border: none;
@@ -61,7 +61,7 @@ input[type=text], [type=password] {
 	transition: all .4s
 }
 
-input[type=text]:focus, [type=password]:focus {
+input[type=text]:focus, [type=password]:focus, [type=email]:focus {
 	outline: none;
 	border-bottom: solid 0.2rem #E67E22;
 	
