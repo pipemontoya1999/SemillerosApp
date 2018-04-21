@@ -9,6 +9,7 @@
 </head>
 <body>
     <?php
+    require ("persona.php");
     $Estado = TRUE;
     if(isset($_POST['entrar'])){
         
@@ -27,10 +28,12 @@
     
       if ($numero_registro != 0){
        
+          $persona = new persona($_POST['user'], $_POST['user'], "Estudiante");
         session_start();
-        $_SESSION['USER']= $_POST['user'];
+        $_SESSION['USER']= $persona;
         $Estado=TRUE;
-        echo $_SESSION['USER'];
+        header('location:index.php');
+        
         }else{$Estado=false;}
       }
     catch (Exception $e){

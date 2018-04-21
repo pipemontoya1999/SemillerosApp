@@ -8,7 +8,7 @@
 			</div>
 
 			<div class="articulo">
-				<article>
+				
 					<p>Esta pagina tiene como fin facilitar la consulta de semilleros de
                                             ingeniería informática a los estudiantes y profesores en la Universidad
                                             de la Sabana.</p>
@@ -16,7 +16,7 @@
                                         
                                         <p>Para comenzar, inicia una sesión con tu cuenta institucional </p> <p> <a href="login.php">Inicia sesion</a> </p>
 					
-				</article>
+				
 			</div>
 
 			<?php include ('sidebar.php'); ?>
