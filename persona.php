@@ -28,6 +28,12 @@ class persona {
     public function getUsuario(){
         return $this->usuario;
     }
+    
+    public function cerrarSesion() {
+        session_start();
+        session_destroy();
+
+    }
      
 
 

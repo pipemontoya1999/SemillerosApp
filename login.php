@@ -8,7 +8,12 @@
     <title>Login</title>
 </head>
 <body>
+    
+
+    
     <?php
+    session_start();
+       if(!isset($_SESSION['USER'])){
     require ("persona.php");
     $Estado = TRUE;
     if(isset($_POST['entrar'])){
@@ -57,8 +62,11 @@
                 echo '<a class="form__bad">Usuario o contraseña incorrectos</a>';
               }
             ?>
-            
+
         </form>
     </div>
+       <?php }else{
+            header('location:index.php');  
+       }?>
 </body>
 </html>
