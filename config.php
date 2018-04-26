@@ -1,4 +1,4 @@
 <?php
-define('serverInfo','sqlsrv:Server=DESKTOP-8PSRS9J\\SQLEXPRESS;Database=Semilleros');
+define('serverInfo','sqlsrv:server = tcp:semilleros.database.windows.net,1433; Database = Semilleros');
 define('UID','conexionsql');
-define('PWD', '1234');
+define('PWD', 'Semillero99');
