@@ -32,11 +32,27 @@
         $numero_registro=$resultado->rowCount();
     
       if ($numero_registro != 0){
-       
-          $persona = new persona($_POST['user'], $_POST['user'], "Estudiante");
+          $arrDatos = $resultado->fetchAll(PDO::FETCH_ASSOC);
+           foreach ($arrDatos as $value) {
+    $cargo = $value['IdCargo'];
+    $nombre = $value['Nombre'];
+    $apellido = $value['Apellido'];
+    }
+    if($cargo == 1){
+        $cargo = "Estudiante";
+    }
+    if($cargo == 2){
+        $cargo = "Profesor";
+    }
+    if($cargo == 3){
+        $cargo = "administrador";
+    }
+          
+          $persona = new persona($nombre, $apellido, $_POST['user'], $cargo);
         session_start();
         $_SESSION['USER']= $persona;
         $Estado=TRUE;
+        
         header('location:index.php');
         
         }else{$Estado=false;}

@@ -7,7 +7,7 @@
 }
 
 body {
-	background:#f2f2f2;
+	background:#9AD1ED;
 	color:#333;
 	font-family:Arial, helvetica, sans-serif;
 }
@@ -26,9 +26,9 @@ a {
 
 header {
 	width: 70%;
-	height: 83px;
+	height: 120px;
 	padding:10px 0;
-	background: #fff;
+	background: #e8ebf1;
 	overflow: hidden;
         display: inline-block;
 }
@@ -40,7 +40,7 @@ header {
 }
 
 .logo img {
-	width:90%;
+	width:100%;
 	vertical-align: top;
      
 }
@@ -53,11 +53,24 @@ header {
 	overflow: hidden;
 }
 
+.login__img {
+	width: 4rem;
+	margin-right: 8rem;
+}
+
+.login__title {
+	color: #C8C8C8;
+        position: absolute;
+}
+
+.login__title span {
+	color: #F39B53;
+}
 session{
         width: 16%;
 	height: 83px;
 	padding:15px 50px;
-	background: #f2f2f2;
+	background: #e8ebf1;
 	order-radius:5px;
         display: inline-block;
         overflow: auto;
@@ -78,8 +91,8 @@ nav ul li {
 
 nav ul li a {
 	display: block;
-	background: #f2f2f2;
-	color: #037E8C;
+	background: #31B1E5;
+	color: white;
 	padding:10px 20px;
 	text-decoration: none;
 	border-radius:3px;
@@ -89,7 +102,7 @@ nav ul li a {
 
 nav ul li a:hover {
 	color: #fff;
-	background: #F24C27;
+	background: #39A1E5;
 }
 
 

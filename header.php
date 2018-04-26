@@ -28,10 +28,23 @@
 <body>
 
 	
-	<header>
+
+
+	
+
+
+    
+                       <?php
+                           require_once ('persona.php');
+                           session_start(); 
+                          if(isset($_SESSION['USER'])){
+                                        
+                           $persona = $_SESSION['USER'];
+                        echo '	<header>
 		<div class="wrapp">
 			<div class="logo">
-				<a href="#"><img src="img/unisabana.png" alt="Pipemontoya"></a>
+				 <img  class="login__img" src="img/unisabana.png" alt="">
+                                  <h2 class="login__title">Semi <span>Sabana</span></h2>
 			</div>
                     
                                 
@@ -40,7 +53,7 @@
                                 
                                         <li><a href="index.php">Inicio</a></li>
 					<li><a href="blog.php">Blog</a></li>
-					<li><a href="acerca_de.php">Acerca de</a></li>
+					<li><a href="acerca_de.php">Semilleros</a></li>
 					<li><a href="contacto.php">Contacto</a></li>
                              
                                 </ul>
@@ -49,33 +62,46 @@
         
 
 	</header>
-
-	
-
-<session>
-    
-                       <?php
-                           require_once ('persona.php');
-                           session_start(); 
-                          if(isset($_SESSION['USER'])){
-                                        
-                           $persona = $_SESSION['USER'];
-                        echo '<div class="dropdown">
+                            <session>
+                            <div class="dropdown">
                         <button onclick="myFunction()" class="dropbtn">'.$persona->getUsuario().'</button>
                         <div id="myDropdown" class="dropdown-content">
                         <a href="borrar.php">cerrar sesión</a>
                         <a href="#">Link 2</a>
                         <a href="#">Link 3</a>
                         </div>
-                        </div>';             
+                        </div>
+                        </session>';             
                            }else{
-                               echo '<div class="dropdown">
+                               echo '	<header>
+		<div class="wrapp">
+			<div class="logo">
+				 <img  class="login__img" src="img/unisabana.png" alt="">
+                                  <h2 class="login__title">Semi <span>Sabana</span></h2>
+			</div>
+                    
+                                
+			<nav>
+				<ul>
+                                
+                                        <li><a href="index.php">Inicio</a></li>
+					<li><a href="acerca_de.php">Acerca de</a></li>
+					<li><a href="contacto.php">Contacto</a></li>
+                             
+                                </ul>
+			</nav>
+		 </div> 
+        
+
+	            </header>
+                                   <session>
+                                   <div class="dropdown">
                         <button onclick="location.href='."'login.php'".'"class="dropbtn">Inicia sesión</button>
-                        </div>';
+                        </div>
+                        </session>';
                            }
                                            ?>
  
-</session>
 
 			
 		
