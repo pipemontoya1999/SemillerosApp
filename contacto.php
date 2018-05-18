@@ -37,7 +37,7 @@
 				</article>
 			</div>
 
-			<?php include ('sidebar.php'); ?>
+
 		</div>
 	</section>
 <?php include ('footer.php'); ?>

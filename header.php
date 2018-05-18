@@ -53,7 +53,7 @@
                                 
                                         <li><a href="index.php">Inicio</a></li>
 					<li><a href="blog.php">Blog</a></li>
-					<li><a href="acerca_de.php">Semilleros</a></li>
+					<li><a href="semilleros.php">Semilleros</a></li>
 					<li><a href="contacto.php">Contacto</a></li>
                              
                                 </ul>
@@ -85,7 +85,7 @@
 				<ul>
                                 
                                         <li><a href="index.php">Inicio</a></li>
-					<li><a href="acerca_de.php">Acerca de</a></li>
+					<li><a href="semilleros.php">Semilleros</a></li>
 					<li><a href="contacto.php">Contacto</a></li>
                              
                                 </ul>

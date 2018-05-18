@@ -22,6 +22,10 @@
 			<?php include ('sidebar.php'); ?>
 		</div>
 	</section>
-<?php include ('footer.php'); ?>
+	<footer>
+		<div class="wrapp">
+			<p>semilleros.sabana.edu.co</p>
+		</div>
+	</footer>
 </body>
 </html>
