@@ -1,13 +1,15 @@
 <?php
 
 class persona {
+    public $id;
      public $nombre;
      public $apellido;
     public $usuario;
     public $cargo;
      
     // Constructor
-    public function __construct($nombre,$apellido, $usuario, $cargo ){
+    public function __construct($id,$nombre,$apellido, $usuario, $cargo ){
+        $this->id = $id;
         $this->nombre = $nombre;
         $this->apellido = $apellido;
         $this->usuario = $usuario;
@@ -42,6 +44,11 @@ class persona {
         public function getCargo(){
 // Devolvemos un atributo
         return $this->cargo;
+    }
+    
+    public function getId(){
+// Devolvemos un atributo
+        return $this->id;
     }
     
     public function cerrarSesion() {

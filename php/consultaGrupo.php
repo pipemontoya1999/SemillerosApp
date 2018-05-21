@@ -4,7 +4,7 @@
                $conn = new PDO(serverInfo, UID, PWD );
                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                $conn->setAttribute(PDO::SQLSRV_ATTR_ENCODING, PDO::SQLSRV_ENCODING_UTF8);
-               $sql2="Select GS.Identificador as identificador, S.Nombre as semillero, D.Nombre as dia, H.HoraInicio, H.HoraFin 
+               $sql2="Select GS.IdGrupo as id, GS.Identificador as identificador, S.Nombre as semillero, D.Nombre as dia, H.HoraInicio, H.HoraFin 
                 from semillero S, dia D, horario H, horarioGrupo HG, grupoSemillero GS
                 where S.IdSemillero = GS.IdSemillero and GS.IdGrupo = HG.IdGrupo and HG.IdHorario = H.IdHorario
                 and H.IdDia = D.IdDia and S.IdSemillero = $data";

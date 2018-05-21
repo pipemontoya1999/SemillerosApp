@@ -50,7 +50,7 @@ function grupoSemillero(id) {
                  var horaInicio=0;
                  var horaFin=0;
              for(var i = 0; i < tam; i++ ){
-                
+                var ID= response[i]['id'];
                 var HI= parseInt(response[i]['HoraInicio']);
                 var HF= parseInt(response[i]['HoraFin']);
                  if(HI>=7 & HI<=11){
@@ -61,13 +61,37 @@ function grupoSemillero(id) {
                       horaFin = response[i]['HoraFin']+":00 AM";  
                  }else{ horaFin = response[i]['HoraFin']+":00 PM";}
                  
+                 
+                 
                $('#tablaGrupo').append(
-                     '<tr class="elemento_add"> <td>'+ response[i]['identificador'] +'</td> <td>'+ response[i]['semillero'] +'</td> <td>'+ response[i]['dia'] +'</td> <td>' + horaInicio + '</td> <td>' + horaFin + '</td> </tr>'
-                        );  
-             }
-        }
-    });
-
+                     '<tr class="elemento_add"> \n\
+                        <td>'+ response[i]['identificador'] + '</td>\n\
+                        <td>'+ response[i]['semillero'] +'</td> \n\
+                        <td>'+ response[i]['dia'] +'</td> \n\
+                        <td>' + horaInicio + '</td> \n\
+                        <td>' + horaFin + '</td> <td>'+
+                        '<button class="btn btn-success glyphicon glyphicon-plus" onclick="agregarSemillero('+ID+')" ></button>'
+                        +'</td>\n\
+                        </tr>'
+                                        );  
+                                }
+                             }
+                         });
 }
-
+             function agregarSemillero(id){
+                     $.ajax({
+                     type:"POST",
+                     url:"php/agregarSemillero.php",
+                     data:{'idSemillero':id},
+        
+                  success:function(response){
+                     
+                 if(response==1){
+                  alertify.success("Semillero agregado con exito");
+                 }
+                 if(response==0){alertify.error("fallo, intenta mas tarde");}
+                 if(response==3){alertify.error("ya estas registrado en este curso");}
+                        }
+                     }); 
+                 }
 

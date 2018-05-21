@@ -39,7 +39,9 @@
                            session_start(); 
                           if(isset($_SESSION['USER'])){
                                         
-                           $persona = $_SESSION['USER'];
+                           $sObj = $_SESSION['USER'];
+                           
+                           $persona = unserialize($sObj);
                         echo '	<header>
 		<div class="wrapp">
 			<div class="logo">

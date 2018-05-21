@@ -37,6 +37,7 @@
     $cargo = $value['IdCargo'];
     $nombre = $value['Nombre'];
     $apellido = $value['Apellido'];
+    $idPersona = $value['IdPersona'];
     }
     if($cargo == 1){
         $cargo = "Estudiante";
@@ -48,7 +49,8 @@
         $cargo = "administrador";
     }
           
-          $persona = new persona($nombre, $apellido, $_POST['user'], $cargo);
+          $persona = new persona($idPersona, $nombre, $apellido, $_POST['user'], $cargo);
+          $persona = serialize($persona);
         session_start();
         $_SESSION['USER']= $persona;
         $Estado=TRUE;
