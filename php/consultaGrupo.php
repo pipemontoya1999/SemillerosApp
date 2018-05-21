@@ -1,6 +1,6 @@
 <?php
                $data = $_POST['id'];
-               include  '../config.php';
+               include  'config.php';
                $conn = new PDO(serverInfo, UID, PWD );
                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                $conn->setAttribute(PDO::SQLSRV_ATTR_ENCODING, PDO::SQLSRV_ENCODING_UTF8);

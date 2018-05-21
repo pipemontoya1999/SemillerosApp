@@ -1,6 +1,6 @@
 <?php
 try {
- include '../config.php';
+ include 'config.php';
         $conn = new PDO(serverInfo, UID, PWD);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $n = $_POST['nombre'];

@@ -27,15 +27,9 @@
 </head>
 <body>
 
-	
 
-
-	
-
-
-    
                        <?php
-                           require_once ('persona.php');
+                           require_once ('php/persona.php');
                            session_start(); 
                           if(isset($_SESSION['USER'])){
                                         
@@ -68,9 +62,9 @@
                             <div class="dropdown">
                         <button onclick="myFunction()" class="dropbtn">'.$persona->getUsuario().'</button>
                         <div id="myDropdown" class="dropdown-content">
-                        <a href="borrar.php">cerrar sesión</a>
+                        <a href="borrar.php"></a>
                         <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
+                        <a href="php/borrar.php">cerrar sesión</a>
                         </div>
                         </div>
                         </session>';             

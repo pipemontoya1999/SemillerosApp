@@ -14,11 +14,11 @@
     <?php
     session_start();
        if(!isset($_SESSION['USER'])){
-    require ("persona.php");
+    require ("php/persona.php");
     $Estado = TRUE;
     if(isset($_POST['entrar'])){
         
-    include 'config.php';
+    include 'php/config.php';
     try{
         $conn = new PDO(serverInfo, UID, PWD);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

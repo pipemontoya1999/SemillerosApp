@@ -5,13 +5,13 @@
   if(!isset($_SESSION['USER'])){
        header('location:../index.php'); 
   }
-  require('../persona.php');
+  require('persona.php');
    $sObj = $_SESSION['USER'];                     
    $persona = unserialize($sObj);
 ?>
 <?php
 try {
- include '../config.php';
+ include 'config.php';
         $conn = new PDO(serverInfo, UID, PWD);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $n = (int)$persona->getId();
