@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<title>Semilleros</title>
 	<link rel="stylesheet" type="text/css" href="librerias/bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="librerias/alertifyjs/css/alertify.css">
 	<link rel="stylesheet" type="text/css" href="librerias/alertifyjs/css/themes/default.css">
 
 	<script src="librerias/jquery-3.2.1.min.js"></script>
-        <script src="js/funciones.js"></script>
+        <script src="js/funciones.js" charset="utf-8"></script>
 	<script src="librerias/bootstrap/js/bootstrap.js"></script>
 	<script src="librerias/alertifyjs/alertify.js"></script>
 </head>
@@ -69,21 +70,52 @@
                 <textarea class="form-control" rows="4" id="comentariou" disabled></textarea>
       </div>
       <div class="modal-footer">
-       
-        
       </div>
     </div>
   </div>
 </div>
 
+
+<!-- Modal para Grupos de semilleros-->
+<div class="modal fade" id="modalGrupo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" ><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Grupos</h4>
+      </div>
+      <div class="modal-body">
+          <table class="table table-hover table-condensed table-bordered" id="tablaGrupo">
+              <tr>
+                  <th>Grupo</th>
+                  <th>Semillero</th>
+                  <th>Dia</th>
+                  <th>Hora Inicio</th>
+                  <th>Hora Fin</th>
+              </tr>
+              <tr class="elemento_add"></tr>
+              
+          </table>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+
 </body>
-</html>
+
+
+    
+
 
 <script type='text/javascript'>
 	$(document).ready(function(){
 		$('#tabla').load('componentes/tabla.php');
 	});
 </script>
+
 <script type='text/javascript'>
 	$(document).ready(function(){
 		$('#guardarnuevo').click(function(){
@@ -98,3 +130,4 @@
         
 </script>
 
+</html>

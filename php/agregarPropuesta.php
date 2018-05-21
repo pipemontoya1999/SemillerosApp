@@ -16,4 +16,3 @@ $sql="INSERT INTO propuestaSemillero(Nombre,IdFacultad,Comentario)"
     die ("error".$ex->getMessage());
 }
 
-
