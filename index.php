@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <?php include ('header.php'); ?>
+<?php   ?>
 	<section class="main">
 		<div class="wrapp">
 			<div class="mensaje">

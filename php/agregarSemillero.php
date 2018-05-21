@@ -15,11 +15,12 @@ try {
         $conn = new PDO(serverInfo, UID, PWD);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $n = (int)$persona->getId();
-$f = (int)$_POST['idSemillero'];
+$g = (int)$_POST['idGrupo'];
+$s = (int)$_POST['idSemillero'];
 
 
 
-    $sql2="select* from personaSemillero where IdPersona = $n and IdSemillero = $f";
+    $sql2="select PG.IdPersona, PG.IdGrupo from personaGrupo PG, grupoSemillero GS where PG.IdPersona = $n and PG.IdGrupo = GS.IdGrupo and GS.IdSemillero = $s";
 
     $resultado2=$conn->prepare($sql2);
     $resultado2->execute();
@@ -30,8 +31,7 @@ $f = (int)$_POST['idSemillero'];
 if($numero_registro != 0){
     echo 3;
 }else{
-  $sql="INSERT INTO personaSemillero(IdPersona,IdSemillero)"
-        . "values($n, $f)";
+  $sql="INSERT INTO personaGrupo(IdPersona,IdGrupo) values($n, $g)";
  $resultado=$conn->prepare($sql);
  echo $resultado->execute();    
     }

@@ -20,7 +20,7 @@
                         <?php
                             
     try{
-        include  '../config.php';
+        include  '../php/config.php';
         $conn = new PDO(serverInfo, UID, PWD);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $sql = "SELECT s.IdSemillero, s.Nombre, s.FechaInicio, s.FechaFin, s.Descripcion, f.Nombre as facultad FROM semillero s, facultad f where s.IdFacultad = f.IdFacultad";

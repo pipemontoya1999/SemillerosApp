@@ -29,11 +29,11 @@ function InfoSemillero(nombre,descripcion) {
 
 function grupoSemillero(id) {
         
-    var id = id;
+    var IDS = id;
     $.ajax({
         type:"POST",
         url:"php/consultaGrupo.php",
-        data:{'id':id},
+        data:{'id':IDS},
         dataType: 'json',
         cache: false,
 
@@ -70,7 +70,7 @@ function grupoSemillero(id) {
                         <td>'+ response[i]['dia'] +'</td> \n\
                         <td>' + horaInicio + '</td> \n\
                         <td>' + horaFin + '</td> <td>'+
-                        '<button class="btn btn-success glyphicon glyphicon-plus" onclick="agregarSemillero('+ID+')" ></button>'
+                        '<button class="btn btn-success glyphicon glyphicon-plus" onclick="agregarSemillero('+ID+','+IDS+')" ></button>'
                         +'</td>\n\
                         </tr>'
                                         );  
@@ -78,14 +78,15 @@ function grupoSemillero(id) {
                              }
                          });
 }
-             function agregarSemillero(id){
+             function agregarSemillero(idg,ids){
                      $.ajax({
                      type:"POST",
                      url:"php/agregarSemillero.php",
-                     data:{'idSemillero':id},
+                     data:{'idGrupo':idg,
+                           'idSemillero':ids},
         
                   success:function(response){
-                     
+                     alert(response);
                  if(response==1){
                   alertify.success("Semillero agregado con exito");
                  }
