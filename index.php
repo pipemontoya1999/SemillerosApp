@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 <?php include ('header.php'); ?>
-<?php   ?>
+
 	<section class="main">
 		<div class="wrapp">
 			<div class="mensaje">
@@ -9,16 +9,28 @@
 			</div>
 
 			<div class="articulo">
-				
-					<p>Esta pagina tiene como fin facilitar la consulta de semilleros de
-                                            ingeniería informática a los estudiantes y profesores en la Universidad
+				<?php if (!isset($_SESSION['USER'])){  ?>
+					<p>Esta pagina tiene como fin facilitar la consulta e inscripcion de los semilleros 
+                                            disponibles en toda la universidad para los estudiantes y profesores en la Universidad
                                             de la Sabana.</p>
 					<br/>
                                         
-                                        <p>Para comenzar, inicia una sesión con tu cuenta institucional </p> <p> <a href="login.php">Inicia sesion</a> </p>
+                                        <p>Para comenzar a hacer uso de las funcionalidades en la plataforma
+                                            inicia una sesión con tu cuenta institucional: </p> <p> <a href="login.php">Inicia sesion</a> </p>
 					
-				
-			</div>
+                                <?php }else{
+                                        echo '<p>Bienvenido.<br/> Para comenzar dale un vistazo a los semilleros disponibles
+                                            desde la pestaña superior.
+                                            Recuerda únicamente inscribir los semilleros acorde a tus horas libres en tu horario.
+                                         </p>
+					<br/>
+                                        
+                                        <p>Estas registrado como: '.$persona->getNombre().' '.$persona->getApellido().'</p>';
+                                }?>
+                        
+                        
+                        
+                        </div>
 
 			<?php include ('sidebar.php'); ?>
 		</div>

@@ -3,10 +3,12 @@
 	<h2>Lista de Semilleros</h2>
 		<table class="table table-hover table-condensed table-bordered">
 		<caption>
+                        <button onclick="location.href='index.php'" type="button" class="btn">Volver</button>
 			<button class="btn btn-primary" data-toggle="modal" data-target="#modalNuevo">
 				Agregar propuesta
 				<span class="glyphicon glyphicon-plus"></span>
 			</button>
+                    
 		</caption>
 			<tr>
 				<th>Nombre del semillero</th>
