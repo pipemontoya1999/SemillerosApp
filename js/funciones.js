@@ -153,3 +153,56 @@ function consultarForo() {
                              }
                          });
 }
+
+function consultarSemillero(id) {
+     
+    var IDS = id;
+    $.ajax({
+        type:"POST",
+        url:"php/consultaMisSemilleros.php",
+        data:{'id':IDS},
+        dataType: 'json',
+        cache: false,
+
+        success:function(response){
+            Object.size = function(obj) {
+            var size = 0, key;
+             for (key in obj) {
+             if (obj.hasOwnProperty(key)) size++;
+            }
+             return size; 
+            };
+            var tam = Object.size(response);
+            $('.elemento_add').remove(); 
+                 var horaInicio=0;
+                 var horaFin=0;
+             for(var i = 0; i < tam; i++ ){
+                var ID= response[i]['id'];
+                var HI= parseInt(response[i]['HoraInicio']);
+                var HF= parseInt(response[i]['HoraFin']);
+                 if(HI>=7 & HI<=11){
+                      horaInicio = response[i]['HoraInicio']+":00 AM";  
+                 }else{ horaInicio = response[i]['HoraInicio']+":00 PM";}
+                 
+                 if(HF>=7 & HF<=11){
+                      horaFin = response[i]['HoraFin']+":00 AM";  
+                 }else{ horaFin = response[i]['HoraFin']+":00 PM";}
+                 
+                 
+                 
+               $('#tablaGrupo').append(
+                     '<tr class="elemento_add"> \n\
+                        <td>'+ response[i]['identificador'] + '</td>\n\
+                        <td>'+ response[i]['semillero'] +'</td> \n\
+                        <td>'+ response[i]['dia'] +'</td> \n\
+                        <td>' + horaInicio + '</td> \n\
+                        <td>' + horaFin + '</td> <td>'+
+                        '<button class="btn btn-success glyphicon glyphicon-plus" onclick="agregarSemillero('+ID+','+IDS+')" ></button>'
+                        +'</td>\n\
+                        </tr>'
+                                        );  
+                                }
+                             }
+                         });
+}
+

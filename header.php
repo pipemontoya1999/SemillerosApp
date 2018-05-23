@@ -62,8 +62,8 @@
                             <div class="dropdown">
                         <button onclick="myFunction()" class="dropbtn">'.$persona->getUsuario().'</button>
                         <div id="myDropdown" class="dropdown-content">
-                        <a href="borrar.php"></a>
-                        <a href="#">Link 2</a>
+                        <a href="misSemilleros.php">Mis semilleros</a>
+                        
                         <a href="php/borrar.php">cerrar sesión</a>
                         </div>
                         </div>
