@@ -156,11 +156,11 @@ function consultarForo() {
 
 function consultarSemillero(id) {
      
-    var IDS = id;
+    var IDP = id;
     $.ajax({
         type:"POST",
         url:"php/consultaMisSemilleros.php",
-        data:{'id':IDS},
+        data:{'id':IDP},
         dataType: 'json',
         cache: false,
 
@@ -177,7 +177,7 @@ function consultarSemillero(id) {
                  var horaInicio=0;
                  var horaFin=0;
              for(var i = 0; i < tam; i++ ){
-                var ID= response[i]['id'];
+                var IDG= response[i]['IdGrupo'];
                 var HI= parseInt(response[i]['HoraInicio']);
                 var HF= parseInt(response[i]['HoraFin']);
                  if(HI>=7 & HI<=11){
@@ -197,12 +197,14 @@ function consultarSemillero(id) {
                         <td>'+ response[i]['dia'] +'</td> \n\
                         <td>' + horaInicio + '</td> \n\
                         <td>' + horaFin + '</td> <td>'+
-                        '<button class="btn btn-success glyphicon glyphicon-plus" onclick="agregarSemillero('+ID+','+IDS+')" ></button>'
+                        '<button class="btn btn-danger glyphicon glyphicon-minus" onclick="eliminarSemillero('+IDG+','+IDP+')" ></button>'
                         +'</td>\n\
                         </tr>'
                                         );  
                                 }
                              }
                          });
+                         
+
 }
 

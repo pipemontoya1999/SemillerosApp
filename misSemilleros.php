@@ -47,6 +47,27 @@
 	});
 </script>
 
+<script>
+   function eliminarSemillero (idg,idp){
+    var idp = <?php echo $persona->getId(); ?>;                   
+    var IDg = idg;
+ 
+    $.ajax({
+        type:"POST",
+        url:"php/eliminarSemilleros.php",
+        data:{'idg':IDg,'idp':idp },
+        dataType: 'json',
+        cache: false,
+
+        success:function(response){
+           if(response=1){
+               alert('Grupo borrado Correctamente.');
+           }
+                             }
+                         }); 
+                        }
+
+</script>
 
 
 </html>
