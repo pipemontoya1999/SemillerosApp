@@ -95,4 +95,61 @@ function grupoSemillero(id) {
                         }
                      }); 
                  }
+                 
+ function agregarForo(nombre,comentario,id){
+    cadena="nombre=" + nombre +
+            "&id=" + id +
+            "&comentario=" + comentario;
+    $.ajax({
+        type:"POST",
+        url:"php/agregarForo.php",
+        data:cadena,
+        
+        success:function(response){
+            if(response==1){
+                               $('#quepex').append(
+                     '<label>Titulo: '+nombre+' </label>  \n\
+                        <textarea class="form-control" rows="4" disabled>'+comentario+'</textarea> \n\
+                        <label>publicado por: ti en: justo ahora </label> <br><br>'
+                                        );
+                alertify.success("propuesta agregada con exito");
+            } else{alertify.error("fallo, intenta mas tarde");}
+        }
+    });   
+}
 
+function consultarForo() {
+        
+    var IDS = 3;
+    $.ajax({
+        type:"POST",
+        url:"php/consultaForo.php",
+        data:{'id':IDS},
+        dataType: 'json',
+        cache: false,
+
+        success:function(response){
+            Object.size = function(obj) {
+            var size = 0, key;
+             for (key in obj) {
+             if (obj.hasOwnProperty(key)) size++;
+            }
+             return size; 
+            };
+            var tam = Object.size(response);
+ 
+            
+               for(var i = 0; i < tam; i++ ){
+                
+       
+               $('#quepex').append(
+                     '<label>Titulo: '+response[i]['titulo']+' </label>  \n\
+                        <textarea class="form-control" rows="4" disabled>'+response[i]['descripcion']+'</textarea>\n\
+                        <label>publicado por: '+response[i]['Usuario']+' en: '+response[i]['fecha']+' </label><br><br>'
+                                        );  
+                                }
+            
+
+                             }
+                         });
+}
