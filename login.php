@@ -74,7 +74,7 @@
             <input type="email" name="user" placeholder="&#128100; usuario" required autofocus>
             <input type="password" name="password" placeholder="&#x1F512; contraseña" required>
             <input class="btn__submit" type="submit" name="entrar" value="ENTRAR">
-            <a class="form__recover" href="">Olvidaste la contraseña?</a><br>
+            <a class="form__recover" href="https://clave.unisabana.edu.co/reseteo/Paginas/RecuperarContrasena.aspx">Olvidaste la contraseña?</a><br>
             <?php
             if (!$Estado){
                 echo '<a class="form__bad">Usuario o contraseña incorrectos</a>';
