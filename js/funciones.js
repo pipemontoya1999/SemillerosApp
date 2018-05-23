@@ -86,7 +86,7 @@ function grupoSemillero(id) {
                            'idSemillero':ids},
         
                   success:function(response){
-                   
+                     alert(response);
                  if(response==1){
                   alertify.success("Semillero agregado con exito");
                  }
